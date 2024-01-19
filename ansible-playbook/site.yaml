@@ -1,0 +1,39 @@
+---
+
+- host: all
+  become: true
+  tasks:
+
+  - name: update and upgrade the servers
+    apt: 
+      update_cache: yes
+      upgrade: yes
+
+  - name: set timezone to Africa/Lagos
+    tags: time
+    timezone: name=Africa/Lagos
+
+  - name: install apache2
+    tags: apache
+    apt:
+      name:
+        - apache2
+      state: latest
+
+  - name: remove index.html
+    file:
+      path: /var/www/html/index.html
+      state: absent
+
+  - name: use the printf script
+    shell: |
+     sudo echo "<h1>Welcome this is my hostname:</h1>" >> /var/www/html/index.html
+     sudo echo "<p>$(hostname -f)</p>" >> /var/www/html/index.html
+    notify: restart Apache
+
+  handlers:
+    - name: restart Apache
+      tags: restart
+      service:
+        name: apache2
+        state: restarted
