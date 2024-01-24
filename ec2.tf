@@ -10,7 +10,7 @@ resource "aws_instance" "ass-1" {
       type = "ssh"
       host = "self.public_ip"
       user = "ubuntu"
-      private_key = file("/mini-project/london-key-pair.pem")
+      private_key = file("/mini-project/london-key2.pem")
     }
 
     tags = {
@@ -32,7 +32,7 @@ resource "aws_instance" "ass-2" {
       type = "ssh"
       host = "self.public_ip"
       user = "ubuntu"
-      private_key = file("/mini-project/london-key-pair.pem")
+      private_key = file("/mini-project/london-key2.pem")
     }
 
     tags = {
@@ -54,7 +54,7 @@ resource "aws_instance" "ass-3" {
       type = "ssh"
       host = "self.public_ip"
       user = "ubuntu"
-      private_key = file("/mini-project/london-key-pair.pem")
+      private_key = file("/mini-project/london-key2.pem")
     }
 
     tags = {
