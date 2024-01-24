@@ -32,7 +32,7 @@ resource "aws_instance" "ass-2" {
       type = "ssh"
       host = "self.public_ip"
       user = "ubuntu"
-      private_key = file("/root/terraform/london-key-pair.pem")
+      private_key = file("/root/mini-project/london-key-pair.pem")
     }
 
     tags = {
