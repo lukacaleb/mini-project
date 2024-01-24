@@ -46,12 +46,12 @@ resource "aws_route_table" "ass-route-table-public" {
 
 resource "aws_route_table_association" "ass-public-subnet1-association" {
 
-    subnet_id = aws_subnet.ass-public-subnet1.vpc_id
+    subnet_id = aws_subnet.ass-public-subnet1.id
     route_table_id = aws_route_table.ass-route-table-public.id
 }
 
 resource "aws_route_table_association" "ass-public-subnet2-association" {
-    subnet_id = aws_subnet.ass-public-subnet2.vpc_id
+    subnet_id = aws_subnet.ass-public-subnet2.id
     route_table_id = aws_route_table.ass-route-table-public.id
 }
 
