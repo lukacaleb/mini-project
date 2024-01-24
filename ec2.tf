@@ -10,7 +10,7 @@ resource "aws_instance" "ass-1" {
       type = "ssh"
       host = "self.public_ip"
       user = "ubuntu"
-      private_key = file("/root/terraform/london-key-pair.pem")
+      private_key = file("/mini-project/london-key-pair.pem")
     }
 
     tags = {
@@ -32,7 +32,7 @@ resource "aws_instance" "ass-2" {
       type = "ssh"
       host = "self.public_ip"
       user = "ubuntu"
-      private_key = file("/root/mini-project/london-key-pair.pem")
+      private_key = file("/mini-project/london-key-pair.pem")
     }
 
     tags = {
@@ -54,7 +54,7 @@ resource "aws_instance" "ass-3" {
       type = "ssh"
       host = "self.public_ip"
       user = "ubuntu"
-      private_key = file("/root/terraform/london-key-pair.pem")
+      private_key = file("/mini-project/london-key-pair.pem")
     }
 
     tags = {
@@ -64,7 +64,7 @@ resource "aws_instance" "ass-3" {
 }
 
 resource "local_file" "Ip_address" {
-    filename = "/root/terraform/ansible-playbook/host-inventory"
+    filename = "/mini-project/ansible-playbook/host-inventory"
     content = <<EOT
     ${aws_instance.ass-1.public_ip}
     ${aws_instance.ass-2.public_ip}
