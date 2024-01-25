@@ -64,7 +64,7 @@ resource "aws_instance" "ass-3" {
 }
 
 resource "local_file" "Ip_address" {
-    filename = "/mini-project/ansible-playbook/host-inventory"
+    filename = "mkdir /mini-project/ansible-playbook/host-inventory"
     content = <<EOT
     ${aws_instance.ass-1.public_ip}
     ${aws_instance.ass-2.public_ip}
