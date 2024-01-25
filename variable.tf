@@ -9,7 +9,7 @@ variable "type" {
 }
 
 variable "key_pair" {
-  default = "london-key-pair.pem"
+  default = "perfect-key3.pem"
 }
 
 variable "availability_zone" {
